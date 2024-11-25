@@ -1,0 +1,138 @@
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blakish-blue: hsl(219, 29%, 14%);
+  --light-grey: hsl(0, 0%, 81%);
+  --light-greyish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-greyish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  width: 80%;
+  max-width: 1300px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "card1 card1 card2 card5"
+    "card3 card4 card4 card5";
+}
+
+.card {
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.card .graduate {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.card .graduate img {
+  border-radius: 100%;
+  width: 42px;
+}
+
+.card h3 {
+  color: white;
+  position: relative;
+  font-weight: 600;
+  padding: 25px 0;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.card p {
+  color: var(--light-grey);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.card h4 {
+  color: white;
+  font-weight: 500;
+}
+
+.card span {
+  color: var(--light-grey);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.card1 {
+  background-color: var(--moderate-violet);
+  position: relative;
+  grid-area: card1;
+}
+
+.card1 .quote {
+  position: absolute;
+  right: 80px;
+  top: 0;
+  z-index: 1;
+}
+
+.card2 {
+  background-color: var(--very-dark-grayish-blue);
+  grid-area: card2;
+}
+
+.card3 {
+  background-color: white;
+  grid-area: card3;
+}
+
+.card4 {
+  background-color: var(--very-dark-blakish-blue);
+  grid-area: card4;
+}
+
+.card5 {
+  background-color: white;
+  grid-area: card5;
+}
+
+.card3 h4,
+.card5 h4 {
+  color: var(--very-dark-grayish-blue);
+}
+
+.card3 h3,
+.card5 h3 {
+  color: var(--very-dark-blackish-blue);
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    max-width: 400px;
+    width: 100%;
+    padding: 40px 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5";
+  }
+  .card .quote {
+    right: 20px;
+  }
+}
